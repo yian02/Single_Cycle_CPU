@@ -23,12 +23,12 @@ always@(funct_i,ALUOp_i)
 begin
     case (ALUOp_i)
     2'b00: begin
-        case (funct3)
+        case (funct_i [2:0])
             3'b001: ALUCtrl_o <= `SLL;
             3'b100: ALUCtrl_o <= `XOR;
             3'b111: ALUCtrl_o <= `AND;
             3'b000:begin
-                case (funct7)
+                case (funct_i [9:3])
                     7'b0000000: ALUCtrl_o <= `ADD;
                     7'b0100000: ALUCtrl_o <= `SUB;
                     7'b0000001: ALUCtrl_o <= `MUL;
@@ -37,7 +37,7 @@ begin
         endcase
     end
     2'b10:begin
-        case (funct3)
+        case (funct_i [2:0])
             3'b000: ALUCtrl_o <= `ADD;
             3'b101: ALUCtrl_o <= `SRA;
         endcase

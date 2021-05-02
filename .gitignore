@@ -1,4 +1,5 @@
 *.vcd
 *.o
 *.txt
+*.log
 .DS_Store
