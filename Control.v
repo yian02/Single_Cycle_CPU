@@ -16,9 +16,6 @@ output reg RegWrite_o;
 
 always@(Op_i)
 begin
-    ALUSrc_o <= ~Op_i[5];
-    RegWrite_o <= Op_i[0];
-    ALUOp_o <= 2'b10;
 case (Op_i)
     `R_Type: begin
             ALUSrc_o <= 1'b0;

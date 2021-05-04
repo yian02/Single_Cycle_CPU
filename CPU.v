@@ -23,7 +23,6 @@ Adder Add_PC(
     .data_o     ()
 );
 
-
 PC PC(
     .clk_i      (clk_i),
     .rst_i      (rst_i),
@@ -37,7 +36,6 @@ Instruction_Memory Instruction_Memory(
     .instr_o    ()
 );
 
-
 Registers Registers(
     .clk_i      (clk_i),
     .RS1addr_i  (Instruction_Memory.instr_o [19:15]),
@@ -48,7 +46,6 @@ Registers Registers(
     .RS1data_o   (), 
     .RS2data_o   () 
 );
-
 
 MUX32 MUX_ALUSrc(
     .data1_i    (Registers.RS2data_o),
@@ -70,17 +67,10 @@ ALU ALU(
     .Zero_o     ()
 );
 
-
-/*
-Not done
-*/
 ALU_Control ALU_Control(
     .funct_i    ({Instruction_Memory.instr_o[31:25],Instruction_Memory.instr_o[14:12]}),
     .ALUOp_i    (Control.ALUOp_o),
     .ALUCtrl_o  ()
 );
-
-
-
 
 endmodule

@@ -55,7 +55,7 @@ always@(posedge Clk) begin
         
     // print PC
     $fdisplay(outfile, "PC = %d", CPU.PC.pc_o);
-    $fdisplay(outfile, "Instruction = %b",CPU.Instruction_Memory.instr_o);
+    //$fdisplay(outfile, "Instruction = %b",CPU.Instruction_Memory.instr_o);
     // print Registers
     $fdisplay(outfile, "Registers");
     $fdisplay(outfile, "x0     = %d, x8(s0)  = %d, x16(a6) = %d, x24(s8)  = %d", CPU.Registers.register[0], CPU.Registers.register[8] , CPU.Registers.register[16], CPU.Registers.register[24]);
