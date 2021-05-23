@@ -2,7 +2,7 @@
 
 ## A Simple Implementation of Single-Cycle CPU
 
-> A simple implementation of single-cycle CPU that only support the following 8 instructions:
+> A simple implementation of single-cycle CPU that only support the following 8 RISC-V instructions:
 
 ### R-Type Instructions
 
